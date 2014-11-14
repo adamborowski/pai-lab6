@@ -1,1 +1,7 @@
 /ServerApp/dist/
+/EnterpriseApp/nbproject/private/
+/EnterpriseApp/EnterpriseApp-ejb/nbproject/private/
+/EnterpriseApp/EnterpriseApp-ejb/build/
+/EnterpriseApp/EnterpriseApp-ejb/dist/
+/EnterpriseApp/dist/
+/EnterpriseApp/build/

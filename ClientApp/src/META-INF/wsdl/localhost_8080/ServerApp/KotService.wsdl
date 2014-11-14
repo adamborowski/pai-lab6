@@ -16,6 +16,12 @@
 <message name="getCatsPagedResponse">
 <part name="parameters" element="tns:getCatsPagedResponse"/>
 </message>
+<message name="nextPage">
+<part name="parameters" element="tns:nextPage"/>
+</message>
+<message name="nextPageResponse">
+<part name="parameters" element="tns:nextPageResponse"/>
+</message>
 <message name="addCat">
 <part name="parameters" element="tns:addCat"/>
 </message>
@@ -34,11 +40,17 @@
 <message name="deleteCatResponse">
 <part name="parameters" element="tns:deleteCatResponse"/>
 </message>
-<message name="init">
-<part name="parameters" element="tns:init"/>
+<message name="prevPage">
+<part name="parameters" element="tns:prevPage"/>
 </message>
-<message name="initResponse">
-<part name="parameters" element="tns:initResponse"/>
+<message name="prevPageResponse">
+<part name="parameters" element="tns:prevPageResponse"/>
+</message>
+<message name="search">
+<part name="parameters" element="tns:search"/>
+</message>
+<message name="searchResponse">
+<part name="parameters" element="tns:searchResponse"/>
 </message>
 <portType name="KotService">
 <operation name="getCats">
@@ -48,6 +60,10 @@
 <operation name="getCatsPaged">
 <input wsam:Action="http://kot.adamborowski.pl/KotService/getCatsPagedRequest" message="tns:getCatsPaged"/>
 <output wsam:Action="http://kot.adamborowski.pl/KotService/getCatsPagedResponse" message="tns:getCatsPagedResponse"/>
+</operation>
+<operation name="nextPage">
+<input wsam:Action="http://kot.adamborowski.pl/KotService/nextPageRequest" message="tns:nextPage"/>
+<output wsam:Action="http://kot.adamborowski.pl/KotService/nextPageResponse" message="tns:nextPageResponse"/>
 </operation>
 <operation name="addCat">
 <input wsam:Action="http://kot.adamborowski.pl/KotService/addCatRequest" message="tns:addCat"/>
@@ -61,9 +77,13 @@
 <input wsam:Action="http://kot.adamborowski.pl/KotService/deleteCatRequest" message="tns:deleteCat"/>
 <output wsam:Action="http://kot.adamborowski.pl/KotService/deleteCatResponse" message="tns:deleteCatResponse"/>
 </operation>
-<operation name="init">
-<input wsam:Action="http://kot.adamborowski.pl/KotService/initRequest" message="tns:init"/>
-<output wsam:Action="http://kot.adamborowski.pl/KotService/initResponse" message="tns:initResponse"/>
+<operation name="prevPage">
+<input wsam:Action="http://kot.adamborowski.pl/KotService/prevPageRequest" message="tns:prevPage"/>
+<output wsam:Action="http://kot.adamborowski.pl/KotService/prevPageResponse" message="tns:prevPageResponse"/>
+</operation>
+<operation name="search">
+<input wsam:Action="http://kot.adamborowski.pl/KotService/searchRequest" message="tns:search"/>
+<output wsam:Action="http://kot.adamborowski.pl/KotService/searchResponse" message="tns:searchResponse"/>
 </operation>
 </portType>
 <binding name="KotServicePortBinding" type="tns:KotService">
@@ -86,6 +106,15 @@
 <soap:body use="literal"/>
 </output>
 </operation>
+<operation name="nextPage">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
 <operation name="addCat">
 <soap:operation soapAction=""/>
 <input>
@@ -113,7 +142,16 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="init">
+<operation name="prevPage">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="search">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

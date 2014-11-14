@@ -3,11 +3,10 @@
   <services/>
   <clients>
     <client name="KotService">
-      <wsdl-url>http://localhost:8080/ServerApp/KotService?wsdl</wsdl-url>
-      <local-wsdl-file>localhost_8080/ServerApp/KotService.wsdl</local-wsdl-file>
-      <package-name>pl.adamborowski.kot</package-name>
+      <wsdl-url>http://localhost:8080/KotService/KotService?wsdl</wsdl-url>
+      <local-wsdl-file>localhost_8080/KotService/KotService.wsdl</local-wsdl-file>
+      <package-name forceReplace="true">pl.adamborowski.client</package-name>
       <catalog-file>catalog.xml</catalog-file>
-      <use-dispatch>true</use-dispatch>
       <wsimport-options>
         <wsimport-option>
           <wsimport-option-name>extension</wsimport-option-name>
@@ -23,7 +22,7 @@
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>wsdlLocation</wsimport-option-name>
-          <wsimport-option-value>http://localhost:8080/ServerApp/KotService?wsdl</wsimport-option-value>
+          <wsimport-option-value>http://localhost:8080/KotService/KotService?wsdl</wsimport-option-value>
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>xnocompile</wsimport-option-name>
@@ -32,6 +31,10 @@
         <wsimport-option>
           <wsimport-option-name>xendorsed</wsimport-option-name>
           <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>package</wsimport-option-name>
+          <wsimport-option-value>pl.adamborowski.client</wsimport-option-value>
         </wsimport-option>
       </wsimport-options>
     </client>

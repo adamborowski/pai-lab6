@@ -20,21 +20,25 @@
 
 <xs:element name="getCatsResponse" type="tns:getCatsResponse"/>
 
-<xs:element name="init" type="tns:init"/>
+<xs:element name="nextPage" type="tns:nextPage"/>
 
-<xs:element name="initResponse" type="tns:initResponse"/>
+<xs:element name="nextPageResponse" type="tns:nextPageResponse"/>
 
-<xs:complexType name="init">
+<xs:element name="prevPage" type="tns:prevPage"/>
+
+<xs:element name="prevPageResponse" type="tns:prevPageResponse"/>
+
+<xs:element name="search" type="tns:search"/>
+
+<xs:element name="searchResponse" type="tns:searchResponse"/>
+
+<xs:complexType name="search">
 <xs:sequence/>
 </xs:complexType>
 
-<xs:complexType name="initResponse">
-<xs:sequence/>
-</xs:complexType>
-
-<xs:complexType name="addCat">
+<xs:complexType name="searchResponse">
 <xs:sequence>
-<xs:element name="arg0" type="tns:cat" minOccurs="0"/>
+<xs:element name="return" type="tns:cat" minOccurs="0" maxOccurs="unbounded"/>
 </xs:sequence>
 </xs:complexType>
 
@@ -55,9 +59,25 @@
 </xs:sequence>
 </xs:complexType>
 
+<xs:complexType name="addCat">
+<xs:sequence>
+<xs:element name="arg0" type="tns:cat" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="addCatResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="nextPage">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="nextPageResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:cat" minOccurs="0" maxOccurs="unbounded"/>
 </xs:sequence>
 </xs:complexType>
 
@@ -70,6 +90,16 @@
 <xs:complexType name="deleteCatResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="prevPage">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="prevPageResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:cat" minOccurs="0" maxOccurs="unbounded"/>
 </xs:sequence>
 </xs:complexType>
 

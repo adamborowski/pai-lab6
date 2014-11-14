@@ -6,9 +6,20 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.adamborowski.client.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="468.0" prefWidth="904.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.adamborowski.client.FXMLDocumentController">
     <children>
-        <Button layoutX="126" layoutY="90" text="Click Me!" onAction="#handleButtonAction" fx:id="button" />
-        <Label layoutX="126" layoutY="120" minHeight="16" minWidth="69" fx:id="label" />
+        
+        <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
+        <TableView fx:id="table" editable="true" layoutX="61.0" layoutY="78.0" prefHeight="316.0" prefWidth="561.0" tableMenuButtonVisible="true">
+            <columns>
+                <TableColumn fx:id="nameColumn" prefWidth="75.0" text="Imie" />
+                <TableColumn fx:id="ageColumn" prefWidth="75.0" text="Wiek" />
+            </columns>
+        </TableView>
+        <Button layoutX="667.0" layoutY="58.0" onAction="#prevAction" text="prev" />
+        <Button layoutX="668.0" layoutY="90.0" onAction="#nextAction" text="next" />
+        <Button layoutX="667.0" layoutY="131.0" onAction="#refreshAction" text="refresh" />
+      <Button layoutX="669.0" layoutY="211.0" mnemonicParsing="false" onAction="#addAction" text="dodaj" />
+      <Button layoutX="669.0" layoutY="250.0" mnemonicParsing="false" onAction="#removeAction" text="usun" />
     </children>
 </AnchorPane>

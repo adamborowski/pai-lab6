@@ -18,8 +18,8 @@
     </target>
     <target name="wsimport-client-KotService" depends="wsimport-init">
         <mkdir dir="${build.generated.dir}/jax-wsCache/KotService"/>
-        <property name="wsdl-KotService" location="xml-resources/web-service-references/KotService/wsdl/localhost_8080/ServerApp/KotService.wsdl"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/KotService" destdir="${build.generated.dir}/jax-wsCache/KotService" wsdl="${wsdl-KotService}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/ServerApp/KotService?wsdl" xnocompile="true" xendorsed="true">
+        <property name="wsdl-KotService" location="xml-resources/web-service-references/KotService/wsdl/localhost_8080/KotService/KotService.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/KotService" destdir="${build.generated.dir}/jax-wsCache/KotService" wsdl="${wsdl-KotService}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/KotService/KotService?wsdl" xnocompile="true" xendorsed="true" package="pl.adamborowski.client">
             <depends file="${wsdl-KotService}"/>
             <produces dir="${build.generated.dir}/jax-wsCache/KotService"/>
         </wsimport>
@@ -31,7 +31,7 @@
     </target>
     <target name="wsimport-client-clean-KotService" depends="-init-project">
         <delete dir="${build.generated.dir}/jax-wsCache/KotService"/>
-        <delete dir="${build.generated.sources.dir}/jax-ws/pl/adamborowski/kot"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/pl/adamborowski/client"/>
     </target>
     <target name="wsimport-client-generate" depends="wsimport-client-KotService"/>
 </project>

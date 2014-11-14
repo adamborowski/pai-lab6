@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://localhost:8080/ServerApp/PageService?wsdl" uri="xml-resources/web-service-references/PageService/wsdl/localhost_8080/ServerApp/PageService.wsdl"/>
+    <system systemId="http://localhost:8080/ServerApp/PageService?xsd=1" uri="xml-resources/web-service-references/PageService/wsdl/localhost_8080/ServerApp/PageService.xsd_1.xsd"/>
     <system systemId="http://localhost:8080/ServerApp/KotService?wsdl" uri="xml-resources/web-service-references/KotService/wsdl/localhost_8080/ServerApp/KotService.wsdl"/>
     <system systemId="http://localhost:8080/ServerApp/KotService?xsd=1" uri="xml-resources/web-service-references/KotService/wsdl/localhost_8080/ServerApp/KotService.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/KotService/KotService?wsdl" uri="xml-resources/web-service-references/KotService/wsdl/localhost_8080/KotService/KotService.wsdl"/>
+    <system systemId="http://localhost:8080/KotService/KotService?xsd=1" uri="xml-resources/web-service-references/KotService/wsdl/localhost_8080/KotService/KotService.xsd_1.xsd"/>
 </catalog>
