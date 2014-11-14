@@ -6,15 +6,15 @@
 package pl.adamborowski.client;
 
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
-import javax.xml.ws.WebServiceRef;
-import pl.adamborowski.client.generated.Kot;
-import pl.adamborowski.client.generated.KotService;
-import pl.adamborowski.client.generated.KotService_Service;
+import pl.adamborowski.kot.Cat;
+import pl.adamborowski.kot.KotService;
+import pl.adamborowski.kot.KotService_Service;
 
 /**
  *
@@ -37,7 +37,8 @@ public class FXMLDocumentController implements Initializable {
         // TODO
         KotService_Service ser = new  KotService_Service();
         service = ser.getKotServicePort();
-        Kot a = service.getKotek("miałotek");
+        List<Cat> a = service.getCats();
+        
         int b = 3;
     }
     private KotService service;

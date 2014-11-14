@@ -5,28 +5,55 @@
  */
 package pl.adamborowski.kot;
 
-import java.util.ArrayList;
-import java.util.Arrays;
+import com.sun.xml.ws.developer.servlet.HttpSessionScope;
+import java.util.List;
+import javax.annotation.PostConstruct;
+import javax.ejb.Stateful;
+import javax.faces.bean.SessionScoped;
 import javax.jws.WebService;
 import javax.jws.WebMethod;
-import javax.jws.WebParam;
-import pl.adamborowski.kot.data.Kot;
+import pl.adamborowski.kot.dao.AbstractDAO;
+import pl.adamborowski.kot.dao.IDAOFactory;
+import pl.adamborowski.kot.data.Cat;
+import pl.adamborowski.kot.dao.json.JSONDaoFactory;
 
 /**
  *
  * @author adam
  */
-@WebService(serviceName = "KotService")
+@HttpSessionScope @WebService(serviceName = "KotService")
 public class KotService {
 
-    /**
-     * Web service operation
-     * @param name
-     * @return 
-     */
-    @WebMethod(operationName = "getKotek")
-    public Kot getKotek(@WebParam(name = "name") String name) {
-        //TODO write your implementation code here:
-        return new Kot(name,new ArrayList<>( Arrays.asList(1, 4, 6, 8)));
+    @PostConstruct
+    public void init() {
+        IDAOFactory factory = new JSONDaoFactory();
+        factory.createConnection();
+        catDao = factory.getCatDAO();
+    }
+    private AbstractDAO<Cat> catDao;
+
+    @WebMethod
+    public int addCat(Cat cat) {
+        return catDao.insert(cat);
+    }
+
+    @WebMethod
+    public Cat findCat(int id) {
+        return catDao.find(id);
+    }
+
+    @WebMethod
+    public List<Cat> getCats() {
+        return catDao.find();
+    }
+
+    @WebMethod
+    public List<Cat> getCatsPaged(int offset, int limit) {
+        return catDao.find(offset, limit);
+    }
+
+    @WebMethod
+    public boolean deleteCat(int id) {
+        return catDao.delete(id);
     }
 }
